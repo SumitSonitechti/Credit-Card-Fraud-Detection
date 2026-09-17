@@ -6,7 +6,7 @@ This project develops a credit card fraud detection system leveraging machine le
 
 The implementation follows a structured analytical pipeline:
 
-1.  **Data Loading**: The `creditcard.csv` dataset, containing anonymized transaction data, is loaded and initially inspected. *(Assumes `creditcard.csv` is accessible in the working directory.)*
+1.  **Data Loading**: The `creditcard.csv` dataset, containing anonymized transaction data, is loaded and initially inspected. *(Kaggle Dataset Link :- https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud/data)*
 2.  **Data Preprocessing & Feature Engineering**: Raw data undergoes cleaning, including the removal of duplicate entries and handling of potential missing values. A new `Hour` feature is engineered from the `Time` column to capture temporal patterns, and the original `Time` column is subsequently dropped.
 3.  **Model Setup & Data Preparation**: The dataset is split into training and testing sets using stratified sampling to preserve the original fraud rate. Features are standardized using `StandardScaler`. To mitigate the impact of class imbalance, SMOTE is applied exclusively to the training data, oversampling the minority (fraudulent) class.
 4.  **Model Training**: An XGBoost classifier is trained on the full SMOTE-balanced training set. For practical comparison, an SVM (kernel='rbf') is trained on a smaller, stratified, and SMOTE-balanced subsample of the training data, acknowledging its higher computational cost on large datasets.
@@ -33,4 +33,5 @@ Two critical plots are generated to aid in understanding model behavior:
     pip install pandas numpy scikit-learn xgboost imbalanced-learn matplotlib
     ```
 2.  **Data Acquisition**: Obtain the `creditcard.csv` dataset and place it in the same directory as this notebook or script.
-3.  **Execution**: Execute the cells of the notebook sequentially to run the entire fraud detection pipeline.
+   Kaggle Dataset Link :- https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud/data
+4.  **Execution**: Execute the cells of the notebook sequentially to run the entire fraud detection pipeline.
